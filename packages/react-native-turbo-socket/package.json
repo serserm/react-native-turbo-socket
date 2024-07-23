@@ -1,0 +1,89 @@
+{
+  "name": "@serserm/react-native-turbo-socket",
+  "version": "0.1.0",
+  "description": "React Native UDP, TCP socket API for Android, iOS with SSL/TLS support.",
+  "author": "serserm (https://github.com/serserm)",
+  "license": "MIT",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/src/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": " https://registry.npmjs.org"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serserm/react-native-turbo-socket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/serserm/react-native-turbo-socket/issues"
+  },
+  "homepage": "https://github.com/serserm/react-native-turbo-socket#readme",
+  "scripts": {
+    "clean": "del-cli android/build lib",
+    "build": "bob build"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "commonjs",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "codegenConfig": {
+    "name": "RNTurboSocketSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  },
+  "create-react-native-library": {
+    "type": "module-mixed",
+    "languages": "java-objc",
+    "version": "0.38.4"
+  }
+}
