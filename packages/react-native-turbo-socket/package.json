@@ -80,10 +80,5 @@
     "name": "RNTurboSocketSpec",
     "type": "modules",
     "jsSrcsDir": "src"
-  },
-  "create-react-native-library": {
-    "type": "module-mixed",
-    "languages": "java-objc",
-    "version": "0.38.4"
   }
 }
