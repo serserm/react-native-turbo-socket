@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9217296B2C50E62D00944C68 /* TurboSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9217296A2C50E62D00944C68 /* TurboSocket.mm */; };
+		924ED3BE2C53874C00724929 /* Errors.h in Headers */ = {isa = PBXBuildFile; fileRef = 92C86CE92C52CAC600FAF3B3 /* Errors.h */; };
+		924ED3BF2C53874C00724929 /* TcpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 92C86CE82C52CAC600FAF3B3 /* TcpClient.h */; };
+		924ED3C02C53874C00724929 /* TurboSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 92C86CEA2C52CAC600FAF3B3 /* TurboSocket.h */; };
+		924ED3C12C53874C00724929 /* UdpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 92C86CE42C52CAC600FAF3B3 /* UdpClient.h */; };
+		92C86CEB2C52CAC600FAF3B3 /* TcpClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92C86CE52C52CAC600FAF3B3 /* TcpClient.mm */; };
+		92C86CEC2C52CAC600FAF3B3 /* TurboSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92C86CE62C52CAC600FAF3B3 /* TurboSocket.mm */; };
+		92C86CED2C52CAC600FAF3B3 /* UdpClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92C86CE72C52CAC600FAF3B3 /* UdpClient.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +30,13 @@
 
 /* Begin PBXFileReference section */
 		9217295D2C50E5B100944C68 /* libturbosocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libturbosocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		921729692C50E62D00944C68 /* TurboSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurboSocket.h; sourceTree = "<group>"; };
-		9217296A2C50E62D00944C68 /* TurboSocket.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TurboSocket.mm; sourceTree = "<group>"; };
+		92C86CE42C52CAC600FAF3B3 /* UdpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpClient.h; sourceTree = "<group>"; };
+		92C86CE52C52CAC600FAF3B3 /* TcpClient.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TcpClient.mm; sourceTree = "<group>"; };
+		92C86CE62C52CAC600FAF3B3 /* TurboSocket.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TurboSocket.mm; sourceTree = "<group>"; };
+		92C86CE72C52CAC600FAF3B3 /* UdpClient.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UdpClient.mm; sourceTree = "<group>"; };
+		92C86CE82C52CAC600FAF3B3 /* TcpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcpClient.h; sourceTree = "<group>"; };
+		92C86CE92C52CAC600FAF3B3 /* Errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Errors.h; sourceTree = "<group>"; };
+		92C86CEA2C52CAC600FAF3B3 /* TurboSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurboSocket.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,8 +53,13 @@
 		921729542C50E5B100944C68 = {
 			isa = PBXGroup;
 			children = (
-				921729692C50E62D00944C68 /* TurboSocket.h */,
-				9217296A2C50E62D00944C68 /* TurboSocket.mm */,
+				92C86CE92C52CAC600FAF3B3 /* Errors.h */,
+				92C86CE82C52CAC600FAF3B3 /* TcpClient.h */,
+				92C86CE52C52CAC600FAF3B3 /* TcpClient.mm */,
+				92C86CEA2C52CAC600FAF3B3 /* TurboSocket.h */,
+				92C86CE62C52CAC600FAF3B3 /* TurboSocket.mm */,
+				92C86CE42C52CAC600FAF3B3 /* UdpClient.h */,
+				92C86CE72C52CAC600FAF3B3 /* UdpClient.mm */,
 				9217295E2C50E5B100944C68 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,11 +74,26 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		924ED3BD2C53873B00724929 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				924ED3BE2C53874C00724929 /* Errors.h in Headers */,
+				924ED3BF2C53874C00724929 /* TcpClient.h in Headers */,
+				924ED3C02C53874C00724929 /* TurboSocket.h in Headers */,
+				924ED3C12C53874C00724929 /* UdpClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		9217295C2C50E5B100944C68 /* turbosocket */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 921729662C50E5B100944C68 /* Build configuration list for PBXNativeTarget "turbosocket" */;
 			buildPhases = (
+				924ED3BD2C53873B00724929 /* Headers */,
 				921729592C50E5B100944C68 /* Sources */,
 				9217295A2C50E5B100944C68 /* Frameworks */,
 				9217295B2C50E5B100944C68 /* CopyFiles */,
@@ -113,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9217296B2C50E62D00944C68 /* TurboSocket.mm in Sources */,
+				92C86CED2C52CAC600FAF3B3 /* UdpClient.mm in Sources */,
+				92C86CEB2C52CAC600FAF3B3 /* TcpClient.mm in Sources */,
+				92C86CEC2C52CAC600FAF3B3 /* TurboSocket.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
