@@ -58,27 +58,28 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(startServer:(NSString *)host port:(double)port type:(NSString *)type) {
     int intPort = port > 0 && port <= 65535 ? (int)port : 0;
-//     if (port == 0) {
-//         port = isSecure ? 443 : 80;
+//     if (intPort == 0) {
+//         intPort = isSecure ? 443 : 80;
 //     }
     NSString *hostName = [@"0.0.0.0" isEqualToString:host] ? nil : host;
     NSString *key = [NSString stringWithFormat:@"%@:%d", host, intPort];
     if ([type isEqualToString:TCP]) {
+        NSDictionary *options = @{};
         TcpClient *serverObject = [_tcpServerMap objectForKey:key];
         if (serverObject == nil) {
-            serverObject = [[TcpClient alloc] init:SERVER clientID:_counter++ delegate:self];
+            serverObject = [[TcpClient alloc] init:SERVER clientID:_counter delegate:self];
             [_tcpServerMap setObject:serverObject forKey:key];
         }
-        [serverObject startServer:hostName port:intPort];
-//         [asyncSocket startTLS:options];
+        [serverObject startServer:hostName port:intPort options:options];
     } else {
 //         UdpClient *serverObject = [_udpServerMap objectForKey:key];
 //         if (serverObject == nil) {
-//             serverObject = [[UdpClient alloc] init:SERVER clientID:_counter++ delegate:self];
+//             serverObject = [[UdpClient alloc] init:SERVER clientID:_counter delegate:self];
 //             [_udpServerMap setObject:serverObject forKey:key];
 //         }
 //         [serverObject startServer:hostName port:intPort];
     }
+    _counter++;
 }
 
 RCT_EXPORT_METHOD(stopServer:(NSString *)host port:(double)port type:(NSString *)type) {
@@ -97,27 +98,29 @@ RCT_EXPORT_METHOD(stopServer:(NSString *)host port:(double)port type:(NSString *
     }
 }
 
-RCT_EXPORT_METHOD(connectHost:(NSString *)host port:(double)port type:(NSString *)type {
+RCT_EXPORT_METHOD(connectHost:(NSString *)host port:(double)port type:(NSString *)type) {
     int intPort = port > 0 && port <= 65535 ? (int)port : 0;
     NSString *key = [NSString stringWithFormat:@"%@:%d", host, intPort];
     if ([type isEqualToString:TCP]) {
+        NSDictionary *options = @{};
         TcpClient *hostObject = [_tcpHostMap objectForKey:key];
         if (hostObject == nil) {
-            hostObject = [[TcpClient alloc] init:HOST clientID:_counter++ delegate:self];
+            hostObject = [[TcpClient alloc] init:HOST clientID:_counter delegate:self];
             [_tcpHostMap setObject:hostObject forKey:key];
         }
-        [hostObject connectHost:host port:intPort];
+        [hostObject connectHost:host port:intPort options:options];
     } else {
 //         UdpClient *hostObject = [_udpHostMap objectForKey:key];
 //         if (hostObject == nil) {
-//             hostObject = [[UdpClient alloc] init:HOST clientID:_counter++ delegate:self];
+//             hostObject = [[UdpClient alloc] init:HOST clientID:_counter delegate:self];
 //             [_udpHostMap setObject:hostObject forKey:key];
 //         }
 //         [hostObject connectHost:host port:intPort];
     }
+    _counter++;
 }
 
-RCT_EXPORT_METHOD(disconnectHost:(NSString *)host port:(double)port type:(NSString *)type {
+RCT_EXPORT_METHOD(disconnectHost:(NSString *)host port:(double)port type:(NSString *)type) {
     int intPort = port > 0 && port <= 65535 ? (int)port : 0;
     NSString *key = [NSString stringWithFormat:@"%@:%d", host, intPort];
     if ([type isEqualToString:TCP]) {
